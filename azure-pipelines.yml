@@ -23,15 +23,15 @@ steps:
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'meredith-service-connection'
-    appName: 'meredith-linux-webapp-node'
+    appName: 'meredith-120070923001064'
     package: '$(System.DefaultWorkingDirectory)'
     customWebConfig: '-Handler iisnode -NodeStartFile server.js -appType node'
 
 - task: AzureRmWebAppDeployment@4
   displayName: Azure App Service Deploy
   inputs:
-    appType: webAppLinux
+    appType: webApp
     ConnectedServiceName: 'meredith-service-connection'
-    WebAppName: 'meredith-linux-webapp-node'
+    WebAppName: 'meredith-120070923001064'
     enableCustomDeployment: true
     deploymentMethod: 'runFromPackage'
